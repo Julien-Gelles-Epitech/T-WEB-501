@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="icon" type="image/x-icon" href="../static/img/JobPulseSmall.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="../static/js/script.js"></script>
+</head>
+<body class="h-screen w-screen content-start p-5 bg-gradient-to-r from-pink-300 via-blue-500 to-purple-600">
+    <header class="bg-gray-700 p-3 rounded flex flex-col md:flex-row items-center justify-between h-min lg:p-5 z-10">
+        <a href="#">
+            <img class="my-3 sm:ml-5 h-10 block md:hidden lg:block hover:scale-110" src="../static/img/JobPulse.png" alt="JobPulseLogo">
+            <img class="my-3 sm:ml-5 h-10 hidden md:block lg:hidden hover:scale-110" src="../static/img/JobPulseSmall.png" alt="JobPulseLogoSmall">
+        </a>
+        <form class="my-3 flex flex-row w-3/4 md:w-1/2">
+                <input type="search" name="title" id="searchTitle" class="w-full p-2.5 z-20 text-gray-900 bg-gray-50 rounded-l-lg focus:ring-blue-500" placeholder="Poste recherché">
+                <input type="search" name="place" id="searchPlace" class="w-full p-2.5 z-20 text-gray-900 bg-gray-50 border-l-2 focus:ring-blue-500" placeholder="Ville, département, Région ...">
+                <button type="submit" class="p-2.5 text-white bg-blue-500 rounded-r-lg border-l-2 border-blue-500 active:bg-blue-600 active:border-blue-600 hover:scale-105">
+                    <svg class="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"/>
+                    </svg>
+                </button>
+        </form>
+        
+        {% block content %}{% endblock %}
+
+    </header>
+    <main class="main rounded h-[calc(100%-96px-12px)] bg-gray-700 mt-3 flex flex-row">
+        <div class="mainlist overflow-y-scroll w-fullh-full flex flex-row flex-wrap justify-center z-10 content-start py-2.5 px-5 xl:px-2.5 xl:py-5 xl:gap-5">
+        </div>
+
+
+        <div class="mainpanel hidden overflow-y-scroll bg-gray-700 h-full w-2/5 rounded-md">
+            <div class="relative panelcontent hidden bg-gradient-to-r from-white to-blue-100 flex flex-col px-5 py-4 rounded-md w-full min-h-full">
+            </div>
+        </div>
+    </main>
+</body>
+</html>
